@@ -1,6 +1,14 @@
 # Console Time: A package to test the run time of your algorithms.
 
-### Documentation
+## Installation
+
+```
+npm install console-time
+```
+
+## Documentation
+
+
 
 The module returns an object with a single property, `run`.  `run` is the function that will test our algorithms.
 
@@ -14,7 +22,7 @@ The module returns an object with a single property, `run`.  `run` is the functi
 
 The size of the input for each algorithm call is n, where n += `maxInput` / `steps` until the max input is reached.
 
-Example:
+### Example:
 
 ``` javascript
 import consoleTime from 'console-time';
@@ -49,7 +57,7 @@ function somethingRandom(arr){
 }
 ```
 
-Example output:
+### Example output:
 
 ```
 === Running: bubbleSort===
