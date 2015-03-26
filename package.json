@@ -1,0 +1,19 @@
+{
+  "name": "console-time",
+  "version": "1.0.1",
+  "description": "A package, built for Node.js and io.js, used to test the runtime of algorithms using different sizes of inputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacob-israel-turner/console-time"
+  },
+  "author": "Jacob Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacob-israel-turner/console-time/issues"
+  },
+  "homepage": "https://github.com/jacob-israel-turner/console-time"
+}
