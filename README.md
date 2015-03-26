@@ -23,7 +23,7 @@ var t = consoleTime.run;
 
 var myAlgos = [bubbleSort, somethingRandom];
 
-t(myAlgos, 1000, 10)
+t(myAlgos, 10000, 10)
 
 function bubbleSort(array){
   var arr = array.slice(0);
@@ -53,67 +53,67 @@ Example output:
 
 ```
 === Running: bubbleSort===
-items:  100
-timer: 1ms
--------
-items:  200
-timer: 1ms
--------
-items:  300
-timer: 0ms
--------
-items:  400
-timer: 0ms
--------
-items:  500
-timer: 0ms
--------
-items:  600
-timer: 0ms
--------
-items:  700
-timer: 1ms
--------
-items:  800
-timer: 1ms
--------
-items:  900
-timer: 1ms
--------
 items:  1000
-timer: 1ms
+timer: 2ms
+-------
+items:  2000
+timer: 4ms
+-------
+items:  3000
+timer: 8ms
+-------
+items:  4000
+timer: 13ms
+-------
+items:  5000
+timer: 21ms
+-------
+items:  6000
+timer: 31ms
+-------
+items:  7000
+timer: 43ms
+-------
+items:  8000
+timer: 53ms
+-------
+items:  9000
+timer: 70ms
+-------
+items:  10000
+timer: 84ms
 -------
 === Done running: bubbleSort===
 === Running: somethingRandom===
-items:  100
-timer: 0ms
--------
-items:  200
-timer: 1ms
--------
-items:  300
-timer: 0ms
--------
-items:  400
-timer: 0ms
--------
-items:  500
-timer: 0ms
--------
-items:  600
-timer: 0ms
--------
-items:  700
-timer: 0ms
--------
-items:  800
-timer: 0ms
--------
-items:  900
-timer: 0ms
--------
 items:  1000
+timer: 0ms
+-------
+items:  2000
 timer: 1ms
+-------
+items:  3000
+timer: 0ms
+-------
+items:  4000
+timer: 0ms
+-------
+items:  5000
+timer: 1ms
+-------
+items:  6000
+timer: 1ms
+-------
+items:  7000
+timer: 0ms
+-------
+items:  8000
+timer: 0ms
+-------
+items:  9000
+timer: 0ms
+-------
+items:  10000
+timer: 0ms
 -------
 === Done running: somethingRandom===
 ```
