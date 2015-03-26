@@ -49,3 +49,71 @@ function somethingRandom(arr){
 }
 ```
 
+Example output:
+
+```
+=== Running: bubbleSort===
+items:  100
+timer: 1ms
+-------
+items:  200
+timer: 1ms
+-------
+items:  300
+timer: 0ms
+-------
+items:  400
+timer: 0ms
+-------
+items:  500
+timer: 0ms
+-------
+items:  600
+timer: 0ms
+-------
+items:  700
+timer: 1ms
+-------
+items:  800
+timer: 1ms
+-------
+items:  900
+timer: 1ms
+-------
+items:  1000
+timer: 1ms
+-------
+=== Done running: bubbleSort===
+=== Running: somethingRandom===
+items:  100
+timer: 0ms
+-------
+items:  200
+timer: 1ms
+-------
+items:  300
+timer: 0ms
+-------
+items:  400
+timer: 0ms
+-------
+items:  500
+timer: 0ms
+-------
+items:  600
+timer: 0ms
+-------
+items:  700
+timer: 0ms
+-------
+items:  800
+timer: 0ms
+-------
+items:  900
+timer: 0ms
+-------
+items:  1000
+timer: 1ms
+-------
+=== Done running: somethingRandom===
+```
