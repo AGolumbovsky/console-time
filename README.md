@@ -23,7 +23,7 @@ var t = consoleTime.run;
 
 var myAlgos = [bubbleSort, somethingRandom];
 
-t(myAlgos, 10000, 20)
+t(myAlgos, 1000, 10)
 
 function bubbleSort(array){
   var arr = array.slice(0);
@@ -48,3 +48,4 @@ function somethingRandom(arr){
 	});
 }
 ```
+
