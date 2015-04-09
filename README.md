@@ -1,6 +1,6 @@
 # Console Time: A package to test the run time of your algorithms.
 
-If you like this package, let me know!  Please submit any issues, feature, or pull requests that might better tha package.  Thank you!
+If you like this package, let me know!  Please submit any issues, feature, or pull requests that might better the package.  Thank you!
 
 ## Installation
 
