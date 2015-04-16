@@ -26,7 +26,10 @@ The module returns an object with a single property, `run`.  `run` is the functi
 
 	`verbose` : (Boolean) Indicates whether or not to print the results in the console.
 
+
 The size of the input for each algorithm call is n, where n += `maxInput` / `steps` until the max input is reached.
+
+`run` will return the results in an array.
 
 ### Example:
 
@@ -70,6 +73,48 @@ function somethingRandom(arr){
 ```
 
 ### Example output:
+
+```
+// where algorithms is an array of algorithsm...
+{ results: 
+     [ [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object] ],
+    name: 'insertSort' },
+  { results: 
+     [ [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object],
+       [Object] ],
+    name: 'quickSort' }
+    
+//where algorithms is a single algorithm...
+[ { time: 0, items: 100 },
+  { time: 0, items: 200 },
+  { time: 0, items: 300 },
+  { time: 0, items: 400 },
+  { time: 0, items: 500 },
+  { time: 0, items: 600 },
+  { time: 0, items: 700 },
+  { time: 0, items: 800 },
+  { time: 0, items: 900 },
+  { time: 0, items: 1000 } ]
+```
+
+### Example print:
 
 ```
 === Running: bubbleSort===
