@@ -3,19 +3,19 @@ function run(sort, options){
 	
 	var max = options.max || 1000;
 	var interval = options.interval || 10;
-	var verbose = options.verbose === false ? false || true;
+	var verbose = options.verbose === false ? false : true;
 
 	if (typeof sort === 'function'){
-		console.log('=== Running: ' + functionName(sort) + ' ===');
+		if(verbose) printStart(functionName(sort));
 		generateInputs(max, interval).forEach(function(item, index){
 			var array = createArray(item);
 		  var start = new Date();
 		  sort(array);
 		  var end = new Date();
 		  var time = end - start; 
-			if(verbose) printResults(functionName(sort), time);	
+			if(verbose) printTime(array.length, time);	
 		});
-		console.log('=== Done running: ' + functionName(sort) + ' ===');
+		if(verbose) printDone(functionName(sort)); 
 	} else if (Array.isArray(sort)){
 		sort.forEach(function(item, index){
 			run(item, max, interval);
@@ -33,9 +33,18 @@ function functionName(fun) {
 	return ret;
 };
 
+function printTime(items, time){
+	console.log('items: ' + items);
+	console.log('time: ' + time);
+	console.log('-------');
+};
 
-function printResults(item, index){
+function printStart(name){	
+	console.log('=== Running ' + name + ' ===');
+};
 
+function printDone(name){
+	console.log('=== Done running: ' + name + ' ===');
 }
 
 function createArray(size){
