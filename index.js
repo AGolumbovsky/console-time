@@ -13,7 +13,10 @@ function entry(sort, options){
 		if(verbose) printDone(functionName(sort)); 
 	} else if (Array.isArray(sort)){
 		var sortResults = sort.map(function(item, index){
-			return entry(item, options);
+			return {
+				results: entry(item, options),
+				name: functionName(item)
+			}
 		});
 	} else {
 		throw new Error('run only accepts a function or an array of functions to test.');	
