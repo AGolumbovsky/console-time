@@ -14,13 +14,17 @@ npm install console-time
 
 The module returns an object with a single property, `run`.  `run` is the function that will test our algorithms.
 
-`run` takes three arguments: `algorithm(s)`, `maxInput`, and `steps`;
+`run` takes two arguments: `algorithm(s)`, `options`
 
 `algorithm(s)`: Either a function or an array of functions. Each function will take in a single array as an argument.
 
-`maxInput`: The maximum size of the input each algorithm will run with.
+`options` : An (optional) object to specify options. The properties (and default values) are
 
-`steps`: The number of steps each algorithm will take (or, number of times an algorithm will run, with varying input sizes).
+	`maxInput`: (Number) The maximum size of the input each algorithm will run with (default 1000).
+
+	`steps`: (Number) The number of steps each algorithm will take (or, number of times an algorithm will run, with varying input sizes) (default 10).
+
+	`verbose` : (Boolean) Indicates whether or not to print the results in the console.
 
 The size of the input for each algorithm call is n, where n += `maxInput` / `steps` until the max input is reached.
 
@@ -33,7 +37,13 @@ var t = consoleTime.run;
 
 var myAlgos = [bubbleSort, somethingRandom];
 
-t(myAlgos, 10000, 10)
+var options = {
+	max: 10000,
+	steps: 10,
+	verbose: true
+}
+
+t(myAlgos);
 
 function bubbleSort(array){
   var arr = array.slice(0);
