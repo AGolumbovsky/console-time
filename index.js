@@ -1,5 +1,5 @@
 
-function run(sort, options){
+function entry(sort, options){
 	
 	var max = options.max || 1000;
 	var interval = options.steps || 10;
@@ -7,24 +7,34 @@ function run(sort, options){
 
 	if (typeof sort === 'function'){
 		if(verbose) printStart(functionName(sort));
-		generateInputs(max, interval).forEach(function(item, index){
-			var array = createArray(item);
+		var sortResults = generateInputs(max, interval).map(function(item, index){
+			return run(sort, createArray(item), verbose);
+		});
+		if(verbose) printDone(functionName(sort)); 
+	} else if (Array.isArray(sort)){
+		var sortResults = sort.map(function(item, index){
+			return {
+				results: entry(item, options),
+				name: functionName(item)
+			}
+		});
+	} else {
+		throw new Error('run only accepts a function or an array of functions to test.');	
+	};
+	return sortResults;
+};
+
+function run(sort, array, verbose){
 		  var start = new Date();
 		  sort(array);
 		  var end = new Date();
 		  var time = end - start; 
 			if(verbose) printTime(array.length, time);	
-		});
-		if(verbose) printDone(functionName(sort)); 
-	} else if (Array.isArray(sort)){
-		sort.forEach(function(item, index){
-			run(item, max, interval);
-		});
-	} else {
-		throw new Error('run only accepts a function or an array of functions to test.');	
-	};
-};
-
+			return {
+				time: time,
+				items: array.length
+			};
+}
 
 function functionName(fun) {
 	var ret = fun.toString();
@@ -49,14 +59,16 @@ function printDone(name){
 
 function createArray(size){
   var arr = [];
-  function generateRandom(){
-    return (Math.floor(Math.random() * size));
-	}
   for(var i = 0; i < size; i++){
-		arr.push(generateRandom());
+		arr.push(generateRandom(size));
   }
   return arr;
 };
+
+function generateRandom(size){
+	return (Math.floor(Math.random() * size));
+} 
+
 
 function generateInputs(max, interval){
   var arr = [];
@@ -67,4 +79,4 @@ function generateInputs(max, interval){
 	return arr;
 };
 
-module.exports =  { run:run, mock:generateInputs };
+module.exports =  { run:entry, mock:generateInputs };

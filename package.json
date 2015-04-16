@@ -1,6 +1,6 @@
 {
   "name": "console-time",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A package, built for Node.js and io.js, used to test the runtime of algorithms using different sizes of inputs.",
   "main": "index.js",
   "scripts": {
