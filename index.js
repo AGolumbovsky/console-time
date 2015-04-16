@@ -1,14 +1,19 @@
 
-function run(sort, max, interval){
+function run(sort, options){
+	
+	var max = options.max || 1000;
+	var interval = options.interval || 10;
+	var verbose = options.verbose === false ? false || true;
+
 	if (typeof sort === 'function'){
 		console.log('=== Running: ' + functionName(sort) + ' ===');
 		generateInputs(max, interval).forEach(function(item, index){
 			var array = createArray(item);
-		  console.log('items: ', array.length);
-		  console.time('timer');
+		  var start = new Date();
 		  sort(array);
-	  	console.timeEnd('timer');
-	  	console.log('-------');
+		  var end = new Date();
+		  var time = end - start; 
+			if(verbose) printResults(functionName(sort), time);	
 		});
 		console.log('=== Done running: ' + functionName(sort) + ' ===');
 	} else if (Array.isArray(sort)){
@@ -26,6 +31,11 @@ function functionName(fun) {
 	ret = ret.substr('function '.length);
 	ret = ret.substr(0, ret.indexOf('('));
 	return ret;
+};
+
+
+function printResults(item, index){
+
 }
 
 function createArray(size){
@@ -37,7 +47,7 @@ function createArray(size){
 		arr.push(generateRandom());
   }
   return arr;
-}
+};
 
 function generateInputs(max, interval){
   var arr = [];
@@ -46,6 +56,6 @@ function generateInputs(max, interval){
   	arr.push(i);
 	}
 	return arr;
-}
+};
 
-module.exports =  { run:run };
+module.exports =  { run:run, mock:generateInputs };
