@@ -54,15 +54,15 @@ function printDone(name){
 	console.log('=== Done running: ' + name + ' ===');
 }
 
-function createArray(size){
+function createArray(){
   var arr = [];
   for(var i = 0; i < size; i++){
-		arr.push(generateRandom());
+		arr.push(generateRandom(size));
   }
   return arr;
 };
 
-function generateRandom(){
+function generateRandom(size){
 	return (Math.floor(Math.random() * size));
 } 
 
