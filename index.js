@@ -2,7 +2,7 @@
 function run(sort, options){
 	
 	var max = options.max || 1000;
-	var interval = options.interval || 10;
+	var interval = options.steps || 10;
 	var verbose = options.verbose === false ? false : true;
 
 	if (typeof sort === 'function'){
