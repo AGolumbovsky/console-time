@@ -54,7 +54,7 @@ function printDone(name){
 	console.log('=== Done running: ' + name + ' ===');
 }
 
-function createArray(){
+function createArray(size){
   var arr = [];
   for(var i = 0; i < size; i++){
 		arr.push(generateRandom(size));
